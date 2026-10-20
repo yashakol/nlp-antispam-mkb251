@@ -1,0 +1,49 @@
+{
+  "utc": "2026-10-20T18:04:55.455171+00:00",
+  "status": "passed",
+  "synthetic_only": true,
+  "model_hash": "8baa5c13493897b6138e814b942860a0de4c75f78b15fabedf6f19bf95739813",
+  "threshold": 0.17315834063189364,
+  "global_python_changed": false,
+  "model_retrained": false,
+  "assignment_1600_evaluated": false,
+  "python": "3.9.6",
+  "platform": "Darwin",
+  "architecture": "arm64",
+  "dependencies": {
+    "fastapi": "0.128.8",
+    "uvicorn": "0.39.0",
+    "numpy": "1.26.4",
+    "scipy": "1.13.1",
+    "scikit-learn": "1.6.1",
+    "joblib": "1.4.2",
+    "pydantic": "2.13.5"
+  },
+  "imports_ms": 12136.010875,
+  "model_load_after_imports_ms": 191.01295799999997,
+  "warm_inference": {
+    "n": 30,
+    "median_ms": 1.3984579999997138,
+    "p95_ms_nearest_rank": 1.5499999999999403,
+    "min_ms": 1.344333000000475,
+    "max_ms": 1.5874169999996468
+  },
+  "local_api_startup_in_process_ms": 210.73883299999886,
+  "local_http_round_trip": {
+    "n": 30,
+    "median_ms": 2.017040999999331,
+    "p95_ms_nearest_rank": 2.2031249999994174,
+    "min_ms": 1.9622919999999766,
+    "max_ms": 2.273457999999451
+  },
+  "checks": {
+    "CLI_parity": true,
+    "health_200": true,
+    "predict_200": true,
+    "EML_base64_parity": true,
+    "invalid_request_400": true,
+    "owned_server_stopped": true
+  },
+  "method": "One short synthetic message, batch1,5warmups,30serial measurements; local127.0.0.1 HTTP includes client/server/JSON overhead and a fresh connection per request.",
+  "limitations": "Smoke timing only; not a production benchmark, throughput test or model-quality estimate."
+}

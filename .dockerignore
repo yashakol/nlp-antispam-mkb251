@@ -1,0 +1,10 @@
+*
+!Dockerfile
+!requirements.txt
+!antispam.py
+!api.py
+!service.py
+!maildata.py
+!experiment_common.py
+!models/
+!models/**

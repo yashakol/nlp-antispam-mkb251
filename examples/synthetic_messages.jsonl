@@ -1,0 +1,2 @@
+{"id":"synthetic_ham","label":0,"subject":"Project meeting","body":"Please review the meeting agenda. We will discuss the project schedule tomorrow at ten."}
+{"id":"synthetic_spam","label":1,"subject":"Claim your free prize","body":"Congratulations! You have won a cash prize. Click now to claim this limited offer."}

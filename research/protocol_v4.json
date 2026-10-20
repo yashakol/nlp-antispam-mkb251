@@ -1,0 +1,147 @@
+{
+  "experiment": "bounded-v4-add-official-spamassassin",
+  "frozen_at_utc": "2026-10-20T17:32:35.138898+00:00",
+  "started_work_utc": "2026-10-20T17:29:20+00:00",
+  "budget_minutes": 20,
+  "seed": 20261021,
+  "split_seed": 20261022,
+  "bootstrap_seed": 20261024,
+  "test_informed": true,
+  "hypothesis": "Adding previously unused SpamAssassin examples may reduce false positives on an unused historical SpamAssassin slice; suggested after old-test disclosure, not a causal experiment.",
+  "candidate": {
+    "id": "word_char_svc",
+    "features": "word+char",
+    "classifier": "LinearSVC",
+    "C": 1.0,
+    "dual": "auto",
+    "max_iter": 5000,
+    "default_threshold": 0.0,
+    "score": "decision margin"
+  },
+  "features": {
+    "words": {
+      "ngram_range": [
+        1,
+        2
+      ],
+      "min_df": 2,
+      "max_df": 0.995,
+      "max_features": 40000,
+      "sublinear_tf": true,
+      "strip_accents": "unicode",
+      "dtype": "float64"
+    },
+    "characters": {
+      "analyzer": "char_wb",
+      "ngram_range": [
+        3,
+        5
+      ],
+      "min_df": 3,
+      "max_features": 25000,
+      "sublinear_tf": true,
+      "text_limit": 4000,
+      "weight": 0.5,
+      "dtype": "float64"
+    }
+  },
+  "normalization": {
+    "policy": "Unchanged frozen V2 parser and feature_text; retain EMAILTOKEN; no V3 ablation",
+    "maildata_sha256": "8bdbd5743141c9b3ab72e277b51d3f5dcdfcc5f211735b343edf9bd401d33e2d",
+    "csv": "Already decoded subject/body -> feature_text; never interpret CSV as raw MIME",
+    "eml": "Frozen corrected MIME parse_email, without attachments or envelope features",
+    "fields_for_model": [
+      "normalized subject",
+      "normalized body"
+    ],
+    "never_model_features": [
+      "source_id",
+      "record id",
+      "sender",
+      "receiver",
+      "date",
+      "folder",
+      "label"
+    ],
+    "known_limits": [
+      "Curated English-only source policy",
+      "Residual spam tags and header-like body text",
+      "Ambiguous charset fallback",
+      "HTML cleanup is not browser CSS visibility"
+    ]
+  },
+  "fit_policy": {
+    "fit_count": 1,
+    "cv_fits": 0,
+    "train_rows": 28493,
+    "preserve_v2_train_rows": 27000,
+    "addition_rows": 1493,
+    "calibration_rows": 7555,
+    "refit_calibration": false,
+    "threads": 2,
+    "convergence_warning": "stop; no retry",
+    "no_parameter_grid": true
+  },
+  "calibration_selection": {
+    "prediction": "spam iff score >= threshold",
+    "threshold_candidates": "Every distinct calibration score plus nextafter(max_score,+infinity); tied scores handled together",
+    "constraints": {
+      "overall_fpr_max": 0.01,
+      "source_fpr_max": 0.02,
+      "source_ham_min_for_fpr_constraint": 100,
+      "overall_recall_min": 0.8
+    },
+    "objective": "Maximum unweighted mean recall across sources having at least one spam",
+    "threshold_ties": [
+      "higher overall recall",
+      "lower overall FPR",
+      "higher threshold"
+    ],
+    "candidate_ties": [
+      "higher overall recall",
+      "lower overall FPR",
+      "listed candidate order"
+    ],
+    "uncertainty": "Constraints are empirical point estimates on calibration, not statistical guarantees",
+    "failure": "If no candidate passes, stop before holdout and old test; save every candidate's diagnostics without relaxing constraints"
+  },
+  "split": {
+    "fixed_ids_sha256": "f9711d478167b50205c059f5c72651d14d31abe848bf4b2f106241f45ff612a2",
+    "fresh_holdout_rows": 1432,
+    "ham": 1313,
+    "spam": 119,
+    "groups": 993,
+    "training_addition_groups": 993,
+    "split_rule": "Previously saved first fold of SGKF(2), label stratified, seed20261022; no reseeding"
+  },
+  "evaluation": {
+    "fresh_holdout_runs_per_model": 1,
+    "primary_acceptance": {
+      "fewer_fp_than_v2": true,
+      "recall_loss_max": 0.01
+    },
+    "absolute_targets_reported_not_primary": {
+      "fpr_max": 0.01,
+      "recall_min": 0.8
+    },
+    "uncertainty": "Paired whole-group bootstrap,2000 resamples,95% percentile intervals; report small sample119spam and do not claim win if FPR interval includes0 or recall noninferiority is not supported",
+    "regression_diagnostic": "One V4 pass on previously used V2 holdout7614; compare saved V2 predictions. Diagnostic only, no further tuning.",
+    "old1600_scored": false,
+    "after_evaluation_tuning": false
+  },
+  "provenance": {
+    "official_url": "https://spamassassin.apache.org/old/publiccorpus/",
+    "readme": "https://spamassassin.apache.org/old/publiccorpus/readme.html",
+    "license": "Original message senders retain copyright; no blanketCC0; no raw publication",
+    "kaggle_exact_version": false,
+    "raw_byte_overlap_records_excluded": 581,
+    "old_test_anchors_in_related_components_excluded": 1244,
+    "exclusion": "Exclude all new components linked to any V1/V2/V3 used group or known-test text anchors without using test labels; audit saved",
+    "limitations": [
+      "Heuristic near grouping does not guarantee campaign independence",
+      "Selected ham-heavy slice from historical sources, not modern Russian deployment",
+      "Original old1600 and V2 holdout already exposed",
+      "Calibration has no SpamAssassin rows; its FPR constraints do not constrain new-source FPR"
+    ]
+  }
+}

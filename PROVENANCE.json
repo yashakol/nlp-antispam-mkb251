@@ -1,0 +1,230 @@
+{
+  "zenodo": {
+    "record": "https://zenodo.org/records/8339691",
+    "api_checked_at_utc": "2026-10-20T15:02:06.655149+00:00",
+    "license": {
+      "id": "cc-by-4.0"
+    },
+    "sources": {
+      "trec07": {
+        "file": "TREC_07.csv",
+        "url": "https://zenodo.org/api/records/8339691/files/TREC_07.csv/content",
+        "md5": "e5a5ae0de1580965191cb32806dc0dae",
+        "sha256": "48c79ed8bd173587a73d9171d1c315229c44b7ee201f83a95883feed241d6c4b",
+        "bytes": 100246925,
+        "fields": [
+          "sender",
+          "receiver",
+          "date",
+          "subject",
+          "body",
+          "label",
+          "urls"
+        ],
+        "class_counts": {
+          "1": 29399,
+          "0": 24358
+        }
+      },
+      "enron": {
+        "file": "Enron.csv",
+        "url": "https://zenodo.org/api/records/8339691/files/Enron.csv/content",
+        "md5": "10489e0fdcc8af6fe62135c689367d40",
+        "sha256": "11f28a5bdd3603f1829681ab6b55071b5f9af781b4e6694e39216b2996a96883",
+        "bytes": 44837129,
+        "fields": [
+          "subject",
+          "body",
+          "label"
+        ],
+        "class_counts": {
+          "0": 15791,
+          "1": 13976
+        }
+      },
+      "ling": {
+        "file": "Ling.csv",
+        "url": "https://zenodo.org/api/records/8339691/files/Ling.csv/content",
+        "md5": "eac6399dc0c7ae455aebb64423dadc8b",
+        "sha256": "9407c9e022accc6c831e54c5226b99b30ac4ae07682e63f5d483ed0ec17ff23c",
+        "bytes": 9337509,
+        "fields": [
+          "subject",
+          "body",
+          "label"
+        ],
+        "class_counts": {
+          "0": 2401,
+          "1": 458
+        }
+      }
+    }
+  },
+  "spamassassin": {
+    "listing": "https://spamassassin.apache.org/old/publiccorpus/",
+    "readme": "https://spamassassin.apache.org/old/publiccorpus/readme.html",
+    "license_notice": "Original senders retain copyright in messages; no blanketCC0",
+    "archives": {
+      "20030228_easy_ham.tar.bz2": {
+        "url": "https://spamassassin.apache.org/old/publiccorpus/20030228_easy_ham.tar.bz2",
+        "final_url": "https://spamassassin.apache.org/old/publiccorpus/20030228_easy_ham.tar.bz2",
+        "http_status": 200,
+        "content_type": "application/x-bzip2",
+        "fetched_at_utc": "2026-10-20T17:16:37.236668+00:00",
+        "bytes": 1612216,
+        "sha256": "2b7b65904bcfcc31d2b5f51946f2d261370b257402cbbd62930b46ab83367438",
+        "md5": "b323cb71981a88567266ebd76e025860",
+        "status": "downloaded"
+      },
+      "20030228_easy_ham_2.tar.bz2": {
+        "url": "https://spamassassin.apache.org/old/publiccorpus/20030228_easy_ham_2.tar.bz2",
+        "final_url": "https://spamassassin.apache.org/old/publiccorpus/20030228_easy_ham_2.tar.bz2",
+        "http_status": 200,
+        "content_type": "application/x-bzip2",
+        "fetched_at_utc": "2026-10-20T17:16:37.713968+00:00",
+        "bytes": 1077892,
+        "sha256": "b4bd3dc5ae5b40f38e99a0e41ad7d16b428b56e818e3a6ffa07330d62004dd38",
+        "md5": "e640e976443c970fd0f8550f217487c8",
+        "status": "downloaded"
+      },
+      "20030228_hard_ham.tar.bz2": {
+        "url": "https://spamassassin.apache.org/old/publiccorpus/20030228_hard_ham.tar.bz2",
+        "final_url": "https://spamassassin.apache.org/old/publiccorpus/20030228_hard_ham.tar.bz2",
+        "http_status": 200,
+        "content_type": "application/x-bzip2",
+        "fetched_at_utc": "2026-10-20T17:16:38.155738+00:00",
+        "bytes": 1029898,
+        "sha256": "ce2ce67880643dbde65ea7f85bffbfe4417349c4bd80b6b0de56262ae6b0a9c9",
+        "md5": "db3e0bb34068b19b38ed768cb324a7b1",
+        "status": "downloaded"
+      },
+      "20030228_spam.tar.bz2": {
+        "url": "https://spamassassin.apache.org/old/publiccorpus/20030228_spam.tar.bz2",
+        "final_url": "https://spamassassin.apache.org/old/publiccorpus/20030228_spam.tar.bz2",
+        "http_status": 200,
+        "content_type": "application/x-bzip2",
+        "fetched_at_utc": "2026-10-20T17:16:39.745929+00:00",
+        "bytes": 1183768,
+        "sha256": "c08debc32413804949a866be45ef78195cec2cbafd1da744ed76cdb860589743",
+        "md5": "a1be3617903da43b2c6a909438988c2f",
+        "status": "downloaded"
+      },
+      "20050311_spam_2.tar.bz2": {
+        "url": "https://spamassassin.apache.org/old/publiccorpus/20050311_spam_2.tar.bz2",
+        "final_url": "https://spamassassin.apache.org/old/publiccorpus/20050311_spam_2.tar.bz2",
+        "http_status": 200,
+        "content_type": "application/x-bzip2",
+        "fetched_at_utc": "2026-10-20T17:16:42.681931+00:00",
+        "bytes": 2059029,
+        "sha256": "44280a0e28bf7645b2279e8e42659271ad82c6f40bf8d364dbda7f1df344a765",
+        "md5": "33bfb65d00315de4b82d85c9411caaa2",
+        "status": "downloaded"
+      }
+    },
+    "not_exact_kaggle_version": true
+  },
+  "role_counts": {
+    "train": {
+      "overall": {
+        "rows": 28493,
+        "groups": 19652,
+        "ham": 15878,
+        "spam": 12615
+      },
+      "sources": {
+        "enron": {
+          "rows": 12760,
+          "groups": 10774,
+          "ham": 6814,
+          "spam": 5946
+        },
+        "ling": {
+          "rows": 1474,
+          "groups": 1362,
+          "ham": 1269,
+          "spam": 205
+        },
+        "spamassassin": {
+          "rows": 1493,
+          "groups": 993,
+          "ham": 1366,
+          "spam": 127
+        },
+        "trec07": {
+          "rows": 12766,
+          "groups": 6551,
+          "ham": 6429,
+          "spam": 6337
+        }
+      }
+    },
+    "train_addition": {
+      "overall": {
+        "rows": 1493,
+        "groups": 993,
+        "ham": 1366,
+        "spam": 127
+      },
+      "sources": {
+        "spamassassin": {
+          "rows": 1493,
+          "groups": 993,
+          "ham": 1366,
+          "spam": 127
+        }
+      }
+    },
+    "calibration": {
+      "overall": {
+        "rows": 7555,
+        "groups": 6565,
+        "ham": 3766,
+        "spam": 3789
+      },
+      "sources": {
+        "enron": {
+          "rows": 4866,
+          "groups": 4107,
+          "ham": 2571,
+          "spam": 2295
+        },
+        "ling": {
+          "rows": 536,
+          "groups": 504,
+          "ham": 438,
+          "spam": 98
+        },
+        "trec07": {
+          "rows": 2153,
+          "groups": 1963,
+          "ham": 757,
+          "spam": 1396
+        }
+      }
+    },
+    "fresh_holdout": {
+      "overall": {
+        "rows": 1432,
+        "groups": 993,
+        "ham": 1313,
+        "spam": 119
+      },
+      "sources": {
+        "spamassassin": {
+          "rows": 1432,
+          "groups": 993,
+          "ham": 1313,
+          "spam": 119
+        }
+      }
+    }
+  },
+  "known_assignment_archive_sha256": "14ccf52ab11673a85acab7c9793effa2c8db72c61838ba1b15356bd22d9576ee",
+  "overlap_audit": {
+    "direct_raw_overlap_sa_records": 581,
+    "old_test_anchors_in_related_components": 1244,
+    "known_test_labels_used_for_exclusion": false,
+    "note": "Nonadditive counts; all new components linked to prior used groups excluded; heuristic search does not ensure campaign independence"
+  },
+  "no_raw_corpora_in_package": true
+}

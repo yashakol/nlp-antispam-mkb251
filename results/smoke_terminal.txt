@@ -1,0 +1,8 @@
+$ python smoke_check.py --output-dir NEW_EVIDENCE_DIRECTORY
+PASS: frozen V4 loaded, CLI parity, GET /health 200, POST /predict 200, invalid request 400
+Python 3.9.6; FastAPI 0.128.8; Uvicorn 0.39.0
+Model load after imports: 191.013 ms
+Warm inference (30 synthetic requests): median 1.398 ms; p95 1.550 ms
+Local HTTP (30 synthetic requests): median 2.017 ms; p95 2.203 ms
+Local socket only; owned server stopped. No training or assignment-set evaluation.
+Synthetic smoke measurements, not a production benchmark.

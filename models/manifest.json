@@ -1,0 +1,14 @@
+{
+  "version": "V4",
+  "model_file": "v4.joblib",
+  "model_sha256": "8baa5c13493897b6138e814b942860a0de4c75f78b15fabedf6f19bf95739813",
+  "threshold": 0.17315834063189364,
+  "score_kind": "LinearSVC decision margin; not a probability",
+  "prediction_rule": "spam iff score >= threshold",
+  "preprocessing": "Frozen V2 MIME parser and normalization; EMAILTOKEN retained",
+  "maildata_sha256": "8bdbd5743141c9b3ab72e277b51d3f5dcdfcc5f211735b343edf9bd401d33e2d",
+  "fit_rows": 28493,
+  "calibration_rows": 7555,
+  "refit_on_calibration": false,
+  "seed": 20261021
+}

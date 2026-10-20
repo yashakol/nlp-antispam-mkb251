@@ -1,0 +1,13 @@
+*.joblib
+*.pkl
+*.pickle
+*.eml
+*.csv
+*.env
+.env*
+.venv*/
+__pycache__/
+*.pyc
+data/
+private/
+.DS_Store
